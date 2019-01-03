@@ -1,13 +1,13 @@
 ﻿using System;
-namespace LP2_Projeto2_SECONDARY
+namespace LP2_P2
 {
     public class RandomGenerator
     {
-        /*public RandomGenerator()
+        public RandomGenerator()
         {
             RandomObjectXPosition();
             RandomObjectSpawnChance();
-        }*/
+        }
 
         Random rand = new Random();
       

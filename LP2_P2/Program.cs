@@ -4,7 +4,7 @@ using System.Collections.Generic;
 //using System.Text;
 using System.Threading;
 
-namespace LP2_Projeto2_SECONDARY
+namespace LP2_P2
 {
     class Program
     {

@@ -33,18 +33,12 @@ namespace LP2_P2
 
                     if (chance < 10)
                     {
-                        Life life = new Life
-                        {
-                            x = rand.Next(0, 5)
-                        };
+                        Life life = new Life();
                         objects.Add(life);
                     }
                     else
                     {
-                        EnemyCar enemyCar = new EnemyCar
-                        {
-                            x = rand.Next(0, 5)
-                        };
+                        EnemyCar enemyCar = new EnemyCar();
                         objects.Add(enemyCar);
                     }
 
@@ -105,19 +99,24 @@ namespace LP2_P2
                 objects = newList;
                 Console.Clear();
                 if (hitted)
-                 {
-                     objects.Clear();
-                     render.PrintOnPosition(userCar.x, userCar.y, 'X', ConsoleColor.Red);
-                 }
-                 else
-                 {
+                {
+                    objects.Clear();
+                    render.PrintOnPosition(userCar.x, userCar.y, 'X', ConsoleColor.Red);
+                }
+                else
+                {
                     render.PrintOnPosition(userCar.x, userCar.y, userCar.c, userCar.color);
-                 }
-                 foreach (Object car in objects)
-                 {
-                     render.PrintOnPosition(car.x, car.y, car.c, car.color);
-                 }
-                 render.PrintHUD();
+                }
+                foreach (IGameObject car in objects)
+                {
+                    car.Update();
+                }
+
+                if (livesCount <= 0)
+                {
+                    render.GameOver();
+                }
+                render.PrintHUD();
                 
             Thread.Sleep((int)(600 - speed));
             }
