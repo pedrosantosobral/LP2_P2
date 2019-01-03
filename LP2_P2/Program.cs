@@ -1,12 +1,22 @@
 ﻿using System;
+using System.Collections.Generic;
+//using System.Linq;
+//using System.Text;
+using System.Threading;
 
-namespace LP2_P2
+namespace LP2_Projeto2_SECONDARY
 {
     class Program
     {
-        static void Main(string[] args)
+
+        static void Main()
         {
-            Console.WriteLine("Hello World!");
+            Game g = new Game();
+            Render r = new Render(g);
+            r.MainMenu();
+            Console.ReadKey();
+            g.GameManager();
         }
     }
+
 }
