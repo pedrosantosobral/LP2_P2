@@ -107,22 +107,17 @@ namespace LP2_P2
                 if (hitted)
                  {
                      objects.Clear();
-                     //TODO
-
-                     //render.PrintOnPosition(userCar.x, userCar.y, 'X', ConsoleColor.Red);
+                     render.PrintOnPosition(userCar.x, userCar.y, 'X', ConsoleColor.Red);
                  }
                  else
                  {
-                    //TODO
-                    //render.PrintOnPosition(userCar.x, userCar.y, userCar.c, userCar.color);
+                    render.PrintOnPosition(userCar.x, userCar.y, userCar.c, userCar.color);
                  }
                  foreach (Object car in objects)
                  {
-                     //render.PrintOnPosition(car.x, car.y, car.c, car.color);
+                     render.PrintOnPosition(car.x, car.y, car.c, car.color);
                  }
-                 //TODO
-                // Draw info
-                //render.PrintHUD();
+                 render.PrintHUD();
                 
             Thread.Sleep((int)(600 - speed));
             }
