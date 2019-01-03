@@ -14,7 +14,7 @@ namespace LP2_P2
         {
             Render render = new Render(this);
             bool startgame = true;
-            Random rand = new Random();
+            RandomGenerator rand = new RandomGenerator();
             UserCar userCar = new UserCar();
 
             List<IGameObject> objects = new List<IGameObject>();
@@ -29,7 +29,7 @@ namespace LP2_P2
 
                 bool hitted = false;
                 {
-                    int chance = rand.Next(0, 100);
+                    int chance = rand.RandomObjectSpawnChance();
 
                     if (chance < 10)
                     {
