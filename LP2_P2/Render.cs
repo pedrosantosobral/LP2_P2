@@ -24,6 +24,30 @@ namespace LP2_P2
             Console.Write(str);
         }
 
+        public void PrintHUD()
+        {
+            PrintLives();
+            PrintSpeed();
+        }
+
+        public void PrintLives()
+        {
+            PrintStringOnPosition(8, 4, "Lives: " + g.livesCount, ConsoleColor.White);
+        }
+
+        public void PrintSpeed()
+        {
+            PrintStringOnPosition(8, 5, "Speed: " + g.speed, ConsoleColor.White);
+        }
+
+        public void GameOver()
+        {
+            PrintStringOnPosition(8, 10, "GAME OVER!!!", ConsoleColor.Red);
+            PrintStringOnPosition(8, 12, "Press [enter] to exit", ConsoleColor.Red);
+            Console.ReadLine();
+            Environment.Exit(0);
+        }
+
     }
 }
 
