@@ -12,6 +12,7 @@ namespace LP2_P2
 
         public void GameManager()
         {
+            Render render = new Render(this);
             bool startgame = true;
             Random rand = new Random();
             UserCar userCar = new UserCar();
@@ -103,7 +104,25 @@ namespace LP2_P2
                 }
                 objects = newList;
                 Console.Clear();
+                if (hitted)
+                 {
+                     objects.Clear();
+                     //TODO
 
+                     //render.PrintOnPosition(userCar.x, userCar.y, 'X', ConsoleColor.Red);
+                 }
+                 else
+                 {
+                    //TODO
+                    //render.PrintOnPosition(userCar.x, userCar.y, userCar.c, userCar.color);
+                 }
+                 foreach (Object car in objects)
+                 {
+                     //render.PrintOnPosition(car.x, car.y, car.c, car.color);
+                 }
+                 //TODO
+                // Draw info
+                //render.PrintHUD();
                 
             Thread.Sleep((int)(600 - speed));
             }
