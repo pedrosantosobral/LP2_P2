@@ -48,7 +48,63 @@ namespace LP2_P2
                     }
 
                 }
-            
+                
+                List<IGameObject> newList = new List<IGameObject>();
+                for (int i = 0; i < objects.Count; i++)
+                {
+                    if (objects[i] is EnemyCar)
+                    {
+                        EnemyCar oldCar = (EnemyCar)objects[i];
+
+                        EnemyCar tempC = new EnemyCar
+                        {
+                            x = oldCar.x,
+                            y = oldCar.y + 1,
+                            c = oldCar.c,
+                            color = oldCar.color
+                        };
+
+                        if (tempC.y == userCar.y && tempC.x == userCar.x)
+                        {
+                            livesCount--;
+                            hitted = true;
+                            speed += 50;
+                        }
+                        if (tempC.y < 20)
+                        {
+                            newList.Add(tempC);
+                        }
+                    }
+                }
+                for (int i = 0; i < objects.Count; i++)
+                {
+                    if (objects[i] is Life)
+                    {
+                        Life oldLife = (Life)objects[i];
+
+                        Life tempL = new Life
+                        {
+                            x = oldLife.x,
+                            y = oldLife.y + 1,
+                            c = oldLife.c,
+                            color = oldLife.color
+                        };
+
+                        if (tempL.y == userCar.y && tempL.x == userCar.x)
+                        {
+                            livesCount++;
+                        }
+
+                        if (tempL.y < 20)
+                        {
+                            newList.Add(tempL);
+                        }
+                    }
+                }
+                objects = newList;
+                Console.Clear();
+
+                
             Thread.Sleep((int)(600 - speed));
             }
         }
