@@ -12,7 +12,8 @@ Pedro: <p>
 - Criou as primeiras variáveis e fez o spawn aleatório de objetos na classe `Game`; <p>
 - Adicionou as colisões na classe `Game`; <p>
 - Fez alguns métodos para imprimir as informações na classe `Render`; <p>
-- Fez a classe `RandomGenerator`. <p>
+- Fez a classe `RandomGenerator`; <p>
+- Fez o UML. <p>
 
 
 Joana: <p>
@@ -20,7 +21,8 @@ Joana: <p>
 - Fez o movimentos dos objetos na classe `Game`; <p>
 - Adiconou a classe `Render` com os métodos principais para escrever as informações do jogo no ecrã; <p>
 - Fez o menu inicial na classe `Render`; <p>
-- Fez a classe `Program`. <p>
+- Fez a classe `Program`; <p>
+- Fez o Fluxograma. <p>
 
 O relatório foi feito por todos os elementos do grupo.
 
