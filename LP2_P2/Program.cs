@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-//using System.Linq;
-//using System.Text;
-using System.Threading;
 
 namespace LP2_P2
 {
@@ -17,6 +13,9 @@ namespace LP2_P2
         /// </summary>
         static void Main()
         {
+            /// Clears the console.
+            Console.Clear();
+
             /// Game instance.
             Game g = new Game();
 

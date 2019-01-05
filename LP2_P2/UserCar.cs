@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Collections;
 using System.Threading;
+
 namespace LP2_P2
 {
     /// <summary>
