@@ -14,7 +14,7 @@ namespace LP2_P2
         public int RandomObjectXPosition()
         {
             int randomNumber;
-            randomNumber = rand.Next(0, 5); 
+            randomNumber = rand.Next(0, 7); 
             return randomNumber;
         }
 

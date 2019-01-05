@@ -1,27 +1,28 @@
 ﻿using System;
 using System.Collections;
+using System.Threading;
 namespace LP2_P2
 {
     public class UserCar : IGameObject
     {
-        public int x;
-        public int y;
-        public char c;
+        public int posX;
+        public int posY;
+        public char visuals;
         public ConsoleColor color;
 
         public UserCar()
         {
-            x = 2;
-            y = 20 -1;
-            c = 'C';
+            posX = 2;
+            posY = 20 -1;
+            visuals = '#';
             color = ConsoleColor.Blue;
         }
 
         public void Update()
         {
-            Console.SetCursorPosition(x, y);
+            Console.SetCursorPosition(posX, posY);
             Console.ForegroundColor = color;
-            Console.Write(c);
+            Console.Write(visuals);
             UserInput();
         }
 
@@ -33,18 +34,19 @@ namespace LP2_P2
                 while (Console.KeyAvailable) Console.ReadKey(true);
                 if (pressedKey.Key == ConsoleKey.LeftArrow)
                 {
-                    if (x - 1 >= 0)
+                    if (posX - 1 >= 0)
                     {
-                        x = x - 1;
+                        posX = posX - 1;
                     }
                 }
                 else if (pressedKey.Key == ConsoleKey.RightArrow)
                 {
-                    if (x + 1 < 5)
+                    if (posX + 1 < 7)
                     {
-                        x = x + 1;
+                        posX = posX + 1;
                     }
                 }
+                Thread.Sleep(10);
             }
         }
     }

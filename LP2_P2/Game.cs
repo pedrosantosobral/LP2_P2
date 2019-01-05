@@ -6,22 +6,20 @@ namespace LP2_P2
 {
     public class Game
     {
-        public int livesCount = 5;
-        public double speed = 100.0;
-        public double acceleration = 0.5;
+        public int totalLives = 3;
+        public float speed = 100.0f;
 
         public void GameManager()
         {
             Render render = new Render(this);
-            bool startgame = true;
             RandomGenerator rand = new RandomGenerator();
             UserCar userCar = new UserCar();
 
             List<IGameObject> objects = new List<IGameObject>();
-            while (startgame == true)
+            while (true)
             {
                 userCar.Update();
-                speed += acceleration;
+                speed += 0.5f;
                 if (speed > 400)
                 {
                     speed = 400;
@@ -44,7 +42,7 @@ namespace LP2_P2
 
                 }
                 
-                List<IGameObject> newList = new List<IGameObject>();
+                List<IGameObject> temp = new List<IGameObject>();
                 for (int i = 0; i < objects.Count; i++)
                 {
                     if (objects[i] is EnemyCar)
@@ -53,21 +51,21 @@ namespace LP2_P2
 
                         EnemyCar tempC = new EnemyCar
                         {
-                            x = oldCar.x,
-                            y = oldCar.y + 1,
-                            c = oldCar.c,
+                            posX = oldCar.posX,
+                            posY = oldCar.posY + 1,
+                            visuals = oldCar.visuals,
                             color = oldCar.color
                         };
 
-                        if (tempC.y == userCar.y && tempC.x == userCar.x)
+                        if (tempC.posY == userCar.posY && tempC.posX == userCar.posX)
                         {
-                            livesCount--;
+                            totalLives--;
                             hitted = true;
-                            speed += 50;
+                            speed += 20;
                         }
-                        if (tempC.y < 20)
+                        if (tempC.posY < 20)
                         {
-                            newList.Add(tempC);
+                            temp.Add(tempC);
                         }
                     }
                 }
@@ -79,46 +77,48 @@ namespace LP2_P2
 
                         Life tempL = new Life
                         {
-                            x = oldLife.x,
-                            y = oldLife.y + 1,
-                            c = oldLife.c,
+                            posX = oldLife.posX,
+                            posY = oldLife.posY + 1,
+                            visuals = oldLife.visuals,
                             color = oldLife.color
                         };
 
-                        if (tempL.y == userCar.y && tempL.x == userCar.x)
+                        if (tempL.posY == userCar.posY && tempL.posX == userCar.posX)
                         {
-                            livesCount++;
+                            totalLives++;
                         }
 
-                        if (tempL.y < 20)
+                        if (tempL.posY < 20)
                         {
-                            newList.Add(tempL);
+                            temp.Add(tempL);
                         }
                     }
                 }
-                objects = newList;
+                objects = temp;
                 Console.Clear();
+
                 if (hitted)
                 {
                     objects.Clear();
-                    render.PrintOnPosition(userCar.x, userCar.y, 'X', ConsoleColor.Red);
+                    render.PrintOnPosition(userCar.posX, userCar.posY, 'X', ConsoleColor.Red);
                 }
                 else
                 {
-                    render.PrintOnPosition(userCar.x, userCar.y, userCar.c, userCar.color);
+                    userCar.Update();
                 }
                 foreach (IGameObject car in objects)
                 {
                     car.Update();
                 }
 
-                if (livesCount <= 0)
+                if (totalLives <= 0)
                 {
                     render.GameOver();
                 }
-                render.PrintHUD();
+                render.PrintBoarders();
+                render.PrintLives();
                 
-            Thread.Sleep((int)(600 - speed));
+            Thread.Sleep((int)(500 - speed));
             }
         }
     }

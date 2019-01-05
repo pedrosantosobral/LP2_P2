@@ -24,20 +24,33 @@ namespace LP2_P2
             Console.Write(str);
         }
 
-        public void PrintHUD()
-        {
-            PrintLives();
-            PrintSpeed();
-        }
-
         public void PrintLives()
         {
-            PrintStringOnPosition(8, 4, "Lives: " + g.livesCount, ConsoleColor.White);
+            PrintStringOnPosition(0, 20, "LIVES: " + g.totalLives, ConsoleColor.White);
         }
 
-        public void PrintSpeed()
+        public void PrintBoarders()
         {
-            PrintStringOnPosition(8, 5, "Speed: " + g.speed, ConsoleColor.White);
+            PrintStringOnPosition(7, 0, "|", ConsoleColor.White);
+            PrintStringOnPosition(7, 1, "|", ConsoleColor.White);
+            PrintStringOnPosition(7, 2, "|", ConsoleColor.White);
+            PrintStringOnPosition(7, 3, "|", ConsoleColor.White);
+            PrintStringOnPosition(7, 4, "|", ConsoleColor.White);
+            PrintStringOnPosition(7, 5, "|", ConsoleColor.White);
+            PrintStringOnPosition(7, 6, "|", ConsoleColor.White);
+            PrintStringOnPosition(7, 7, "|", ConsoleColor.White);
+            PrintStringOnPosition(7, 8, "|", ConsoleColor.White);
+            PrintStringOnPosition(7, 9, "|", ConsoleColor.White);
+            PrintStringOnPosition(7, 10, "|", ConsoleColor.White);
+            PrintStringOnPosition(7, 11, "|", ConsoleColor.White);
+            PrintStringOnPosition(7, 12, "|", ConsoleColor.White);
+            PrintStringOnPosition(7, 13, "|", ConsoleColor.White);
+            PrintStringOnPosition(7, 14, "|", ConsoleColor.White);
+            PrintStringOnPosition(7, 15, "|", ConsoleColor.White);
+            PrintStringOnPosition(7, 16, "|", ConsoleColor.White);
+            PrintStringOnPosition(7, 17, "|", ConsoleColor.White);
+            PrintStringOnPosition(7, 18, "|", ConsoleColor.White);
+            PrintStringOnPosition(7, 19, "|", ConsoleColor.White);
         }
 
         public void GameOver()
@@ -54,8 +67,8 @@ namespace LP2_P2
             PrintStringOnPosition(1, 2, "Your goal is to go the much further possible while avoiding the traffic.", ConsoleColor.White);
             PrintStringOnPosition(1, 3, "", ConsoleColor.White);
             PrintStringOnPosition(1, 4, "-> Use the right and left arrow to move your car <-", ConsoleColor.White);
-            PrintStringOnPosition(1, 5, "C -> Your car", ConsoleColor.Blue);
-            PrintStringOnPosition(1, 6, "# -> Enemy car", ConsoleColor.Green);
+            PrintStringOnPosition(1, 5, "# -> Your car", ConsoleColor.Blue);
+            PrintStringOnPosition(1, 6, "O -> Enemy car", ConsoleColor.Red);
             PrintStringOnPosition(1, 7, "- -> Add life", ConsoleColor.Green);
             PrintStringOnPosition(1, 8, "", ConsoleColor.White);
             PrintStringOnPosition(1, 9, "[Press any key to continue...]", ConsoleColor.White);

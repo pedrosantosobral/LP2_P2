@@ -5,24 +5,24 @@ namespace LP2_P2
     {
         RandomGenerator rand = new RandomGenerator();
 
-        public int x;
-        public int y;
-        public char c;
+        public int posX;
+        public int posY;
+        public char visuals;
         public ConsoleColor color;
 
         public EnemyCar()
         {
-            x = rand.RandomObjectXPosition();
-            y = 0;
-            c = '#';
-            color = ConsoleColor.Green;
+            posX = rand.RandomObjectXPosition();
+            posY = 0;
+            visuals = 'O';
+            color = ConsoleColor.Red;
         }
 
         public void Update()
         {
-            Console.SetCursorPosition(x, y);
+            Console.SetCursorPosition(posX, posY);
             Console.ForegroundColor = color;
-            Console.Write(c);
+            Console.Write(visuals);
         }
     }        
 }
