@@ -1,15 +1,31 @@
 ﻿using System;
 namespace LP2_P2
 {
+    /// <summary>
+    /// Render class
+    /// </summary>
     public class Render
     {
+        /// <summary>
+        /// Game instance.
+        /// </summary>
         public Game g;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="T:LP2_P2.Render"/> class.
+        /// </summary>
+        /// <param name="g">The green component.</param>
         public Render(Game g)
         {
             this.g = g;
         }
-
+        /// <summary>
+        /// Prints on the console position.
+        /// </summary>
+        /// <param name="x">The x coordinate.</param>
+        /// <param name="y">The y coordinate.</param>
+        /// <param name="c"> visuals .</param>
+        /// <param name="color">Color.</param>
         public void PrintOnPosition(int x, int y, char c, ConsoleColor color = ConsoleColor.Black)
         {
             Console.SetCursorPosition(x, y);
@@ -17,6 +33,13 @@ namespace LP2_P2
             Console.Write(c);
         }
 
+        /// <summary>
+        /// Prints the string on position.
+        /// </summary>
+        /// <param name="x">The x coordinate.</param>
+        /// <param name="y">The y coordinate.</param>
+        /// <param name="str">String.</param>
+        /// <param name="color">Color.</param>
         public void PrintStringOnPosition(int x, int y, string str, ConsoleColor color = ConsoleColor.Black)
         {
             Console.SetCursorPosition(x, y);
@@ -24,11 +47,17 @@ namespace LP2_P2
             Console.Write(str);
         }
 
+        /// <summary>
+        /// Prints the player lives.
+        /// </summary>
         public void PrintLives()
         {
             PrintStringOnPosition(0, 20, "LIVES: " + g.totalLives, ConsoleColor.White);
         }
 
+        /// <summary>
+        /// Prints the game right boarders.
+        /// </summary>
         public void PrintBoarders()
         {
             PrintStringOnPosition(7, 0, "|", ConsoleColor.White);
@@ -53,6 +82,9 @@ namespace LP2_P2
             PrintStringOnPosition(7, 19, "|", ConsoleColor.White);
         }
 
+        /// <summary>
+        /// Print teh game over message.
+        /// </summary>
         public void GameOver()
         {
             PrintStringOnPosition(8, 10, "GAME OVER!!!", ConsoleColor.Red);
@@ -60,7 +92,10 @@ namespace LP2_P2
             Console.ReadLine();
             Environment.Exit(0);
         }
-        
+
+        /// <summary>
+        /// Print the main menu.
+        /// </summary>
         public void MainMenu()
         {
             PrintStringOnPosition(1, 1, "Welcome to Lisbon trafic", ConsoleColor.White);
