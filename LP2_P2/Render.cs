@@ -26,7 +26,8 @@ namespace LP2_P2
         /// <param name="y">The y coordinate.</param>
         /// <param name="c"> visuals .</param>
         /// <param name="color">Color.</param>
-        public void PrintOnPosition(int x, int y, char c, ConsoleColor color = ConsoleColor.Black)
+        public void PrintOnPosition(int x, int y, char c, 
+                                    ConsoleColor color = ConsoleColor.Black)
         {
             Console.SetCursorPosition(x, y);
             Console.ForegroundColor = color;
@@ -40,7 +41,8 @@ namespace LP2_P2
         /// <param name="y">The y coordinate.</param>
         /// <param name="str">String.</param>
         /// <param name="color">Color.</param>
-        public void PrintStringOnPosition(int x, int y, string str, ConsoleColor color = ConsoleColor.Black)
+        public void PrintStringOnPosition(int x, int y, string str, 
+                                          ConsoleColor color = ConsoleColor.Black)
         {
             Console.SetCursorPosition(x, y);
             Console.ForegroundColor = color;
@@ -52,7 +54,8 @@ namespace LP2_P2
         /// </summary>
         public void PrintLives()
         {
-            PrintStringOnPosition(0, 20, "LIVES: " + g.totalLives, ConsoleColor.White);
+            PrintStringOnPosition(0, 20, "LIVES: " + g.totalLives, 
+                                  ConsoleColor.White);
         }
 
         /// <summary>
@@ -98,15 +101,20 @@ namespace LP2_P2
         /// </summary>
         public void MainMenu()
         {
-            PrintStringOnPosition(1, 1, "Welcome to Lisbon trafic", ConsoleColor.White);
-            PrintStringOnPosition(1, 2, "Your goal is to go the much further possible while avoiding the traffic.", ConsoleColor.White);
-            PrintStringOnPosition(1, 3, "", ConsoleColor.White);
-            PrintStringOnPosition(1, 4, "-> Use the right and left arrow to move your car <-", ConsoleColor.White);
+            PrintStringOnPosition(1, 1, "Welcome to Lisbon trafic", 
+                                  ConsoleColor.White);
+            PrintStringOnPosition(1, 2, "Your goal is to go the much further " +
+                                  "possible while avoiding the traffic.", 
+                                  ConsoleColor.White);
+            PrintStringOnPosition(1, 3, "");
+            PrintStringOnPosition(1, 4, "-> Use the right and left arrow to " +
+                                  "move your car <-", ConsoleColor.White);
             PrintStringOnPosition(1, 5, "# -> Your car", ConsoleColor.Blue);
             PrintStringOnPosition(1, 6, "O -> Enemy car", ConsoleColor.Red);
             PrintStringOnPosition(1, 7, "- -> Add life", ConsoleColor.Green);
-            PrintStringOnPosition(1, 8, "", ConsoleColor.White);
-            PrintStringOnPosition(1, 9, "[Press any key to continue...]", ConsoleColor.White);
+            PrintStringOnPosition(1, 8, "");
+            PrintStringOnPosition(1, 9, "[Press any key to continue...]", 
+                                  ConsoleColor.White);
         }
 
     }

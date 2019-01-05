@@ -76,7 +76,8 @@ namespace LP2_P2
                     /// If the object is a enemy car.
                     if (objects[i] is EnemyCar)
                     {
-                        /// Create another enemy car with the first enemy car atributes
+                        /// Create another enemy car with the first enemy car 
+                        /// atributes
                         EnemyCar oldCar = (EnemyCar)objects[i];
 
                         /// Creates a temporary car and move it down
@@ -95,7 +96,8 @@ namespace LP2_P2
                             hitted = true;
                             speed += 20;
                         }
-                        /// Add the objects to the temporary list if they are out of the "game map"
+                        /// Add the objects to the temporary list if they are 
+                        /// out of the "game map"
                         if (tempC.posY < 20)
                         {
                             temp.Add(tempC);
@@ -121,7 +123,8 @@ namespace LP2_P2
                             /// Increments lives by 1
                             totalLives++;
                         }
-                        /// Add the objects to the temporary list if they are out of the "game map"
+                        /// Add the objects to the temporary list if they are 
+                        /// out of the "game map"
                         if (tempL.posY < 20)
                         {
                             temp.Add(tempL);
@@ -137,7 +140,8 @@ namespace LP2_P2
                 {
                     objects.Clear();
                     /// Print a car crash
-                    render.PrintOnPosition(userCar.posX, userCar.posY, 'X', ConsoleColor.Red);
+                    render.PrintOnPosition(userCar.posX, userCar.posY, 'X', 
+                                           ConsoleColor.Red);
                 }
                 else
                 {

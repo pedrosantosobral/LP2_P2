@@ -7,7 +7,8 @@ namespace LP2_P2
     public class RandomGenerator
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="T:LP2_P2.RandomGenerator"/> class.
+        /// Initializes a new instance of the 
+        /// <see cref="T:LP2_P2.RandomGenerator"/> class.
         /// </summary>
         public RandomGenerator()
         {
